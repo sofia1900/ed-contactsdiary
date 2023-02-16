@@ -2,8 +2,6 @@ package com.iesam.agenda.data.local;
 
 import com.iesam.agenda.domain.models.Contact;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.*;
 
 /**

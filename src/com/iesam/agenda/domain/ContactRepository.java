@@ -17,6 +17,8 @@ public interface ContactRepository {
 
     public void delete(Integer contactId);
 
+    public Contact findById(Integer contactId);
+
 }
 
 

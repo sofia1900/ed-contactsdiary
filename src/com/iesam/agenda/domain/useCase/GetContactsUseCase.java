@@ -1,6 +1,6 @@
-package com.iesam.agenda.domain;
+package com.iesam.agenda.domain.useCase;
 
-import com.iesam.agenda.data.ContactDataRepository;
+import com.iesam.agenda.domain.ContactRepository;
 import com.iesam.agenda.domain.models.Contact;
 
 import java.util.List;

@@ -1,9 +1,6 @@
 package com.iesam.agenda.data;
 
-
-import com.iesam.agenda.data.local.ContactFileLocalDataSource;
 import com.iesam.agenda.data.local.ContactLocalDataSource;
-import com.iesam.agenda.data.local.ContactMemLocalDataSource;
 import com.iesam.agenda.domain.ContactRepository;
 import com.iesam.agenda.domain.models.Contact;
 
@@ -34,5 +31,10 @@ public class ContactDataRepository implements ContactRepository {
     @Override
     public void delete(Integer contactId) {
         localDataSource.delete(contactId);
+    }
+
+    @Override
+    public Contact findById(Integer contactId) {
+        return localDataSource.findById(contactId);
     }
 }

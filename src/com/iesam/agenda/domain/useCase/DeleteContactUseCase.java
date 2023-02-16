@@ -1,8 +1,6 @@
-package com.iesam.agenda.domain;
+package com.iesam.agenda.domain.useCase;
 
-import com.iesam.agenda.domain.models.Contact;
-
-import java.util.List;
+import com.iesam.agenda.domain.ContactRepository;
 
 public class DeleteContactUseCase {
 
