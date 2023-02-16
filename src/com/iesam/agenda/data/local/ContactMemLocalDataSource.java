@@ -2,13 +2,14 @@ package com.iesam.agenda.data.local;
 
 import com.iesam.agenda.domain.models.Contact;
 
-import java.util.Map;
-import java.util.TreeMap;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.*;
 
 /**
  * Patrón Singletón para tener sólo una instancia de esta clase
  */
-public class ContactMemLocalDataSource {
+public class ContactMemLocalDataSource implements ContactLocalDataSource{
 
     // Paso 1: creamos una variable estática privada que nos indica si ya está creada la instancia. Se inicia con null.
     private static ContactMemLocalDataSource instance = null;
@@ -21,6 +22,18 @@ public class ContactMemLocalDataSource {
      */
     private ContactMemLocalDataSource() {
 
+    }
+
+    public void save(Contact contact) {
+        storage.put(contact.getId(), contact);
+    }
+
+    public Contact findById(Integer contactId) {
+        return storage.get(contactId);
+    }
+
+    public List<Contact> findAll() {
+        return new ArrayList<>(storage.values());
     }
 
     /**

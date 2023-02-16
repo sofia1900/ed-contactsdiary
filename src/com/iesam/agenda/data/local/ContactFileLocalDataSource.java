@@ -19,7 +19,7 @@ import java.util.Scanner;
  *  Modelo + Tipo de Almacenamiento + LocalDataSource
  *
  */
-public class ContactFileLocalDataSource {
+public class ContactFileLocalDataSource implements ContactLocalDataSource{
 
     private static ContactFileLocalDataSource instance = null;
 
