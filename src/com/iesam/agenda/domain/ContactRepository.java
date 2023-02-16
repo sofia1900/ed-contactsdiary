@@ -15,6 +15,8 @@ public interface ContactRepository {
 
     public List<Contact> getAll();
 
+    public void delete(Integer contactId);
+
 }
 
 

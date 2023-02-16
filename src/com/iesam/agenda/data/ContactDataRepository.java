@@ -17,7 +17,7 @@ public class ContactDataRepository implements ContactRepository {
 
     private ContactLocalDataSource localDataSource;
 
-    public ContactDataRepository(ContactLocalDataSource localDataSource){
+    public ContactDataRepository(ContactLocalDataSource localDataSource) {
         this.localDataSource = localDataSource;
     }
 
@@ -29,5 +29,10 @@ public class ContactDataRepository implements ContactRepository {
     @Override
     public List<Contact> getAll() {
         return localDataSource.findAll();
+    }
+
+    @Override
+    public void delete(Integer contactId) {
+        localDataSource.delete(contactId);
     }
 }

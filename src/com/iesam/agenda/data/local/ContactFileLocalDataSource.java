@@ -16,10 +16,9 @@ import java.util.Scanner;
 
 /**
  * La clase que gestiona los datos tendrá el siguiente formato en el naming:
- *  Modelo + Tipo de Almacenamiento + LocalDataSource
- *
+ * Modelo + Tipo de Almacenamiento + LocalDataSource
  */
-public class ContactFileLocalDataSource implements ContactLocalDataSource{
+public class ContactFileLocalDataSource implements ContactLocalDataSource {
 
     private static ContactFileLocalDataSource instance = null;
 
@@ -75,6 +74,18 @@ public class ContactFileLocalDataSource implements ContactLocalDataSource{
             e.printStackTrace();
         }
         return new ArrayList<Contact>();
+    }
+
+    @Override
+    public void delete(Integer contactId) {
+        List<Contact> contacts = findAll();
+        List<Contact> newList = new ArrayList<>();
+        for (Contact contact : contacts) {
+            if (!Objects.equals(contact.getId(), contactId)) {
+                newList.add(contact);
+            }
+        }
+        saveToFile(newList);
     }
 
     public static ContactFileLocalDataSource getInstance() {

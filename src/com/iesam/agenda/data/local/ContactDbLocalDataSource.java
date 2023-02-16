@@ -25,6 +25,11 @@ public class ContactDbLocalDataSource implements ContactLocalDataSource{
         return null;
     }
 
+    @Override
+    public void delete(Integer contactId) {
+
+    }
+
     public static ContactDbLocalDataSource getInstance(){
         if (instance == null){
             instance = new ContactDbLocalDataSource();

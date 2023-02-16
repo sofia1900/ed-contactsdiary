@@ -1,5 +1,7 @@
 package com.iesam.agenda.domain.models;
 
+import com.google.gson.Gson;
+
 public class Contact {
     private Integer id;
     private String name;
@@ -45,5 +47,10 @@ public class Contact {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    @Override
+    public String toString() {
+        return new Gson().toJson(this);
     }
 }
